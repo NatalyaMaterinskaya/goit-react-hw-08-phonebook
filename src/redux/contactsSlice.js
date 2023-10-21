@@ -1,6 +1,7 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { fetchContacts, addContact, deleteContact } from './operations';
-import { handleFulfilled, handleFulfilledAdd, handleFulfilledDelete, handleFulfilledFetch, handlePending, handleRejected } from './reducers';
+import { handleContactsLogoutFulfilled, handleFulfilled, handleFulfilledAdd, handleFulfilledDelete, handleFulfilledFetch, handlePending, handleRejected } from './reducers';
+import { logOut } from './auth/authOperations';
 
 const STATUS = {
   PENDING: 'pending',
@@ -27,6 +28,7 @@ const contactsSlice = createSlice({
       .addCase(fetchContacts.fulfilled, handleFulfilledFetch)
       .addCase(addContact.fulfilled, handleFulfilledAdd)
       .addCase(deleteContact.fulfilled, handleFulfilledDelete)
+      .addCase(logOut.fulfilled, handleContactsLogoutFulfilled)
       .addMatcher(isAnyOf(...addStatus(PENDING)), handlePending)
       .addMatcher(isAnyOf(...addStatus(FULFILLED)), handleFulfilled)
       .addMatcher(isAnyOf(...addStatus(REJECTED)), handleRejected);

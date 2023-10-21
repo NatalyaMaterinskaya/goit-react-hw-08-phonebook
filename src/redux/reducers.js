@@ -24,3 +24,8 @@ export const handleRejected = (state, { payload }) => {
   state.error = payload;
 };
 
+export const handleContactsLogoutFulfilled = state => {
+  state.items = [];
+  state.isLoading = false;
+  state.error = '';
+};

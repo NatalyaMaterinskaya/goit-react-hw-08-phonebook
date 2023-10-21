@@ -36,7 +36,7 @@ export const ContactForm = () => {
     <Formik
       initialValues={{
         name: '',
-        phone: '',
+        number: '',
       }}
       validationSchema={schema}
       onSubmit={(values, actions) => {
@@ -57,8 +57,8 @@ export const ContactForm = () => {
 
         <Label>
           Number
-          <StyledField name="phone" type="tel" />
-          <StyledErrorMessage name="phone" component="div" />
+          <StyledField name="number" type="tel" />
+          <StyledErrorMessage name="number" component="div" />
         </Label>
         <Btn type="submit">Add contact</Btn>
       </StyledForm>

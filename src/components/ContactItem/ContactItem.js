@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { deleteContact } from 'redux/operations';
 import { Text, Btn } from './ContactItem.styled';
 
-export const ContactItem = ({ contact: { id, name, phone } }) => {
+export const ContactItem = ({ contact: { id, name, number } }) => {
   const dispach = useDispatch();
   const handleDelete = () => dispach(deleteContact(id));
   return (
     <>
       <Text>{name}</Text>
-      <Text>{phone}</Text>
+      <Text>{number}</Text>
       <Btn type="button" onClick={handleDelete}>
         Delete
       </Btn>
