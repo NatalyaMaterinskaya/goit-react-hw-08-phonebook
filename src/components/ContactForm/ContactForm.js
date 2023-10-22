@@ -11,7 +11,7 @@ import {
   StyledErrorMessage,
   Btn,
 } from './ContactForm.styled';
-
+import toast from 'react-hot-toast';
 
 const nameRegex =
   "^[a-zA-Zа-яА-Я]+(([' \\-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$";
@@ -41,7 +41,7 @@ export const ContactForm = () => {
       validationSchema={schema}
       onSubmit={(values, actions) => {
         if (isExist(contacts, values.name)) {
-          alert(`${values.name} is already in contacts.`);
+          toast.error(`${values.name} is already in contacts.`);
           return;
         }
         dispatch(addContact(values));

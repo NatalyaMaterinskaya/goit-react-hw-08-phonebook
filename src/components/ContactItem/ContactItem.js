@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
 import { deleteContact } from 'redux/operations';
-import { Btn, Wrapper } from './ContactItem.styled';
 import { Heading, Text } from '@chakra-ui/react';
+import PropTypes from 'prop-types';
+import { Btn, Wrapper } from './ContactItem.styled';
 
 export const ContactItem = ({ contact: { id, name, number } }) => {
   const dispach = useDispatch();

@@ -1,11 +1,6 @@
 import React, { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import { Toaster } from 'react-hot-toast';
-
-
-
-
 import { Navigation } from './Navigation/Navigation';
 import { Loader } from './Loader/Loader';
 import { Container } from './Container/Container';
@@ -20,7 +15,6 @@ export const AppLayuot = () => {
           <Outlet />
         </Suspense>
       </Container>
-      <Toaster />
     </>
   );
 };

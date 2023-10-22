@@ -1,21 +1,15 @@
-// import { useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
-// import { fetchContacts } from 'redux/operations';
-// import { ContactForm } from './ContactForm/ContactForm';
-// import { Filter } from './Filter/Filter';
-// import { ContactList } from './ContactList/ContactList';
-// import { Loader } from './Loader/Loader';
-import { GlobalStyle } from './GlobalStyle';
-
 import { lazy, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
+
 import { AppLayuot } from './AppLayuot';
 import { PublicRoute } from './PublicRoute';
 import { PrivateRoute } from './PrivateRoute';
-import { useDispatch } from 'react-redux';
-import { useAuth } from 'hooks/useAuth';
 import { refreshUser } from 'redux/auth/authOperations';
+import { useAuth } from 'hooks/useAuth';
+import { GlobalStyle } from './GlobalStyle';
+import { Toaster } from 'react-hot-toast';
+
 
 const HomePage = lazy(() => import('pages/HomePage'));
 const RegisterPage = lazy(() => import('pages/RegisterPage'));
@@ -64,6 +58,7 @@ export const App = () => {
         </Route>
       </Routes>
       <GlobalStyle />
+      <Toaster />
     </>
   );
 };

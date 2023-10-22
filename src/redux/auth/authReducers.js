@@ -15,7 +15,7 @@ export const handleRefreshPending = state => {
 };
 
 export const handleRefreshFulfilled = (state, { payload }) => {
-  state.user = payload.user;
+  state.user = payload;
   state.isLoggedIn = true;
   state.isRefreshing = false;
 };
