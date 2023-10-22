@@ -2,7 +2,7 @@ import { useDispatch} from 'react-redux';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
-import { singUp } from 'redux/auth/authOperations';
+import { signUp } from 'redux/auth/authOperations';
 import { Btn, Label, StyledErrorMessage, StyledField, StyledForm } from './RegisterForm.styled';
 
 const nameRegex =
@@ -33,7 +33,7 @@ export const RegisterForm = () => {
       }}
       validationSchema={schema}
       onSubmit={(values, actions) => {
-        dispatch(singUp (values));
+        dispatch(signUp (values));
         actions.resetForm();
       }}
     >

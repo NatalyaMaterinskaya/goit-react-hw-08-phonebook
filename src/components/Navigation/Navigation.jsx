@@ -20,8 +20,7 @@ export const Navigation = () => {
             </ListItem>
           )}
         </List>
-          {isLoggedIn ? <UserMenu /> : <AuthNav />}
- 
+        {isLoggedIn ? <UserMenu /> : <AuthNav />}
       </Nav>
     </Header>
   );

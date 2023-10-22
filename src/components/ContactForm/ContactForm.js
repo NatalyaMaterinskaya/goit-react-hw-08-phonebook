@@ -24,7 +24,7 @@ const schema = Yup.object().shape({
     .trim('Enter your name, please')
     .matches(nameRegex, 'Name is not valid')
     .required('Required'),
-  phone: Yup.string()
+  number: Yup.string()
     .matches(numberRegex, 'Phone number is not valid')
     .required('Required'),
 });

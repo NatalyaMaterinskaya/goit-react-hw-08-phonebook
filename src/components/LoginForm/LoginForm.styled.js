@@ -19,9 +19,9 @@ export const Label = styled.label`
 `;
 
 export const StyledField = styled(Field)`
-  max-width: 200px;
-  padding: 4px 8px;
-  font-size: 20px;
+  max-width: 300px;
+  padding:4px 8px;
+  font-size: 16px;
   border-radius: 4px;
 
   &:focus {

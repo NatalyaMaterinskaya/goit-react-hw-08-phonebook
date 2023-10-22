@@ -1,5 +1,5 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-import { logIn, logOut, refreshUser, singUp } from './authOperations';
+import { logIn, logOut, refreshUser, signUp } from './authOperations';
 import { handleEntranceFulfilled, handleLogoutFulfilled, handleRefreshFulfilled, handleRefreshPending, handleRefreshRejected } from './authReducers';
 
 
@@ -20,7 +20,7 @@ const authSlice = createSlice({
       .addCase(refreshUser.fulfilled, handleRefreshFulfilled)
       .addCase(refreshUser.rejected, handleRefreshRejected)
       .addMatcher(
-        isAnyOf(singUp.fulfilled, logIn.fulfilled),
+        isAnyOf(signUp.fulfilled, logIn.fulfilled),
         handleEntranceFulfilled
       );
   },

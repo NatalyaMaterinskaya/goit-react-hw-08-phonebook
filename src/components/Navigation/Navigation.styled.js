@@ -8,7 +8,10 @@ export const Header = styled.header`
 `;
 
 export const Nav = styled.nav`
+  display: flex;
+  justify-content: space-between;
   margin-left: 20px;
+  margin-right: 20px;
 `;
 
 export const List = styled.ul`
@@ -28,6 +31,6 @@ export const LinkItem = styled(NavLink)`
   color: #000000;
 
   &.active {
-    color: #ff6347;
+    color: #536be4;
   }
 `;

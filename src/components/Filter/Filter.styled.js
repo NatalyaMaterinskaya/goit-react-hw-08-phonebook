@@ -10,7 +10,7 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  max-width: 200px;
+  max-width: 300px;
   padding: 4px 8px;
   font-size: 20px;
   border-radius: 4px;

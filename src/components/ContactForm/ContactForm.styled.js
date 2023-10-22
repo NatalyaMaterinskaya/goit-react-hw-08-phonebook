@@ -8,7 +8,6 @@ export const StyledForm = styled(Form)`
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 16px 16px;
-  border: 2px solid #000000;
 `;
 
 export const Label = styled.label`

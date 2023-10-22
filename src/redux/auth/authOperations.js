@@ -1,30 +1,27 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const privateInstanse = axios.create({
-  baseURL: 'https://connections-api.herokuapp.com',
-});
-
-const publicInstanse = axios.create({
+export const instanse = axios.create({
   baseURL: 'https://connections-api.herokuapp.com',
 });
 
 const setToken = token => {
-  privateInstanse.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+  instanse.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 };
 
 export const deleteToken = () => {
-  delete privateInstanse.defaults.headers.common['Authorization'];
+  delete instanse.defaults.headers.common['Authorization'];
 };
 
-export const singUp = createAsyncThunk(
+export const signUp = createAsyncThunk(
   'auth/register',
   async (body, thuncAPI) => {
     try {
-      const response = await publicInstanse.post('/users/signup', body);
+      const response = await instanse.post('/users/signup', body);
       setToken(response.data.token);
       return response.data;
     } catch (error) {
+      console.log('first', thuncAPI.rejectWithValue(error.message));
       return thuncAPI.rejectWithValue(error.message);
     }
   }
@@ -32,7 +29,7 @@ export const singUp = createAsyncThunk(
 
 export const logIn = createAsyncThunk('auth/login', async (body, thuncAPI) => {
   try {
-    const response = await publicInstanse.post('​/users​/login', body);
+    const response = await instanse.post('/users/login', body);
     setToken(response.data.token);
     return response.data;
   } catch (error) {
@@ -40,9 +37,10 @@ export const logIn = createAsyncThunk('auth/login', async (body, thuncAPI) => {
   }
 });
 
+
 export const logOut = createAsyncThunk('auth/logout', async (_, thuncAPI) => {
   try {
-    const response = await privateInstanse.post('/users/logout');
+    const response = await instanse.post('/users/logout');
     deleteToken();
     return response.data;
   } catch (error) {
@@ -61,7 +59,7 @@ export const refreshUser = createAsyncThunk(
     }
     try {
       setToken(persistedToken);
-      const response = await privateInstanse.get('/users/current');
+      const response = await instanse.get('/users/current');
       return response.data;
     } catch (error) {
       return thuncAPI.rejectWithValue(error.message);
