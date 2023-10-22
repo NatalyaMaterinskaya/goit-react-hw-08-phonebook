@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/983.a38cab44.chunk.js","mappings":"4JAUA,UAViB,WACf,OACE,+BACE,8BACE,uBAAG,sCAIV,C","sources":["pages/HomePage.jsx"],"sourcesContent":["const HomePage = () => {\n  return (\n    <>\n      <section>\n        <p>Welcome to the cute phone book</p>\n      </section>\n    </>\n  );\n};\n\nexport default HomePage;\n"],"names":[],"sourceRoot":""}
